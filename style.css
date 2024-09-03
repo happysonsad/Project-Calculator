@@ -11,6 +11,11 @@ body {
     margin: 0 auto;
 }
 
+#display{
+    padding: 1vh;
+    font-size: xx-large;
+}
+
 button {
     padding: 2vh;
     border-radius: 10px;
