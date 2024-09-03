@@ -20,6 +20,6 @@ const divide = function divide(a, b) {
     return a / b;
 }
 
-function operate() {
-    
+function operate(a, operator, b) {
+    add(a, b)
 }

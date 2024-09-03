@@ -4,3 +4,62 @@
     padding: 0;
 }
 
+body {
+    border: 2px solid black;
+    border-radius: 10px;
+    max-width: 24vh;
+    margin: 0 auto;
+}
+
+button {
+    padding: 2vh;
+    border-radius: 10px;
+    font-weight: bold;
+    border-style: none;
+}
+
+#display-container {
+    margin: 1vh;
+    background-color: #6ec7e4;
+    border-radius: 10px;
+    text-align: right;
+    color: #f4f4f4;
+}
+
+#allButton-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5vh;
+    padding-bottom: 1vh;
+}
+
+#clear {
+    background-color: #d9d6d6;
+}
+
+#multiply,
+#subtract,
+#add,
+#divide,
+#equals {
+    background-color: #f6bc51;
+    color: #fff;
+}
+
+#zero,
+#one,
+#two,
+#three,
+#four,
+#five,
+#six,
+#seven,
+#eight,
+#nine,
+#decimalPoint {
+    color: #fff;
+    background-color: #9d9a9a;
+}
+
+
