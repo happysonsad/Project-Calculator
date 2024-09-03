@@ -11,9 +11,15 @@ body {
     margin: 0 auto;
 }
 
+#calculator-container {
+    background-color: #000000;
+    padding: 1vh;
+}
+
 #display{
     padding: 1vh;
-    font-size: xx-large;
+    font-size: 3vh;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 button {
@@ -23,9 +29,14 @@ button {
     border-style: none;
 }
 
+button:active {
+    margin-left: 1px 1px 0;
+    box-shadow: -1px -1px 1px #ed0b0b;
+    outline: 1px solid #fff;
+    background-image: linear-gradient(to top, #10e2e2, #dfdddd);
+}
+
 #display-container {
-    margin: 1vh;
-    background-color: #6ec7e4;
     border-radius: 10px;
     text-align: right;
     color: #f4f4f4;
