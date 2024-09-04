@@ -1,8 +1,28 @@
 "use strict"
 
-let numOne = "";
+const zero = document.querySelector("#zero");
+const one = document.querySelector("#one");
+const two = document.querySelector("#two");
+const three = document.querySelector("#three");
+const four = document.querySelector("#four");
+const five = document.querySelector("#five");
+const six = document.querySelector("#six");
+const seven = document.querySelector("#seven");
+const eight = document.querySelector("#eight");
+const nine = document.querySelector("#nine");
+
+const clearButton = document.querySelector("#clear");
+
+const display = document.querySelector("#display");
+
+const addButton = document.querySelector("#add");
+const subtractButton = document.querySelector("#subtract");
+const multiplyButton = document.querySelector("#multiply");
+const divideButton = document.querySelector("#divide");
+
+let fisrtNum = "";
 let operator = "";
-let numTwo = "";
+let nextNum = "";
 
 function add(a, b) {
     return a + b;
@@ -20,24 +40,22 @@ function divide(a, b) {
     return a / b;
 }
 
-function operate(numOne, numTwo, operator) {
-    
-};
+function operate(num1, num2, operator) {
+    switch (operator) {
+        case "+":
+          return add(num1, num2);
+        case "-":
+          return subtract(num1, num2);
+        case "*":
+          return multiply(num1, num2);
+        case "/":
+          return divide(num1, num2);
+      }
+    };
 
 let displayValue = 0;
-const display = document.querySelector("#display");
 display.textContent = displayValue;
 
-const zero = document.querySelector("#zero");
-const one = document.querySelector("#one");
-const two = document.querySelector("#two");
-const three = document.querySelector("#three");
-const four = document.querySelector("#four");
-const five = document.querySelector("#five");
-const six = document.querySelector("#six");
-const seven = document.querySelector("#seven");
-const eight = document.querySelector("#eight");
-const nine = document.querySelector("#nine");
 
 function getNumber(num) {
     num.addEventListener(("click"), () => {
@@ -60,28 +78,11 @@ getNumber(seven);
 getNumber(eight);
 getNumber(nine);
 
-
-const clear = document.querySelector("#clear")
 function clearNumber(button) {
     button.addEventListener(("click"), () => {
         display.textContent = 0;
         displayValue = 0;
     })
 }
-clearNumber(clear);
+clearNumber(clearButton);
 
-
-function runMethod(button) {
-    button.addEventListener(("click"), (e) => {
-
-    })
-}
-
-const addBtn = document.querySelector("#add");
-const subtractBtn = document.querySelector("#subtract");
-const multiplyBtn = document.querySelector("#multiply");
-const divideBtn = document.querySelector("#divide");
-
-
-
-// .reduce
