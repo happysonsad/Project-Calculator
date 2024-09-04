@@ -15,10 +15,7 @@ const clearButton = document.querySelector("#clear");
 
 const initialValue = document.querySelector("#initialValue");
 
-const addButton = document.querySelector("#add");
-const subtractButton = document.querySelector("#subtract");
-const multiplyButton = document.querySelector("#multiply");
-const divideButton = document.querySelector("#divide");
+const operators = document.querySelectorAll(".operators");
 
 const decimalPointButton = document.querySelector("#decimalPoint");
 
@@ -29,25 +26,43 @@ let fisrtNum = "";
 let operator = "";
 let nextNum = "";
 
-function add(a, b) {
+function add(a,b){
     return a + b;
 }
-
-function subtract(a, b) {
+function subtract(a,b){
     return a - b;
 }
-
-function multiply(a, b) {
+function multiply(a,b){
     return a * b;
 }
-
-function divide(a, b) {
+function divide(a,b){
     return a / b;
 }
 
-function operate () {
-
+function operate(num1, num2, op){
+    if (op == "+") return add (num1,num2);
+    if (op == "-") return subtract (num1,num2);    
+    if (op == "*") return multiply (num1,num2);
+    if (op == "/") {
+        if (num2 == 0) {return "Error"}
+        return divide(num1,num2);
+    }
 }
+
+operators.forEach(button => {
+    button.addEventListener(("click"), () => {
+        if ((!operator) || (!nextNum)) {
+            operator = button.textContent;
+            initialValue.textContent = operator;
+        } else {
+            let result = operate(Number(fisrtNum), Number(nextNum), operator);
+            nextNum = null;
+            operator = button.textContent;
+            initialValue.textContent = button.textContent;
+            fisrtNum = result.toFixed(2);
+        }
+    })
+})
 
 
 function getNumber(num) {
