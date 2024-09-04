@@ -22,9 +22,9 @@ const decimalPointButton = document.querySelector("#decimalPoint");
 const equalsButton = document.querySelector("#equals");
 
 
-let fisrtNum = "";
-let operator = "";
-let nextNum = "";
+let fisrtNum;
+let operator;
+let nextNum;
 
 function add(a,b){
     return a + b;
@@ -62,6 +62,14 @@ operators.forEach(button => {
             fisrtNum = result.toFixed(2);
         }
     })
+})
+
+equalsButton.addEventListener(("click"), () => {
+    let result = operate(Number(fisrtNum), Number(nextNum), operator);
+    initialValue.textContent = typeof result == "string" ? result : result.toFixed(2);
+    nextNum = null;
+    operator = null;
+    fisrtNum = result.toFixed(2);
 })
 
 
