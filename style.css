@@ -1,4 +1,6 @@
-* {
+*,
+*::before,
+*::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -64,16 +66,7 @@ button:active {
     color: #fff;
 }
 
-#zero,
-#one,
-#two,
-#three,
-#four,
-#five,
-#six,
-#seven,
-#eight,
-#nine,
+.numbers,
 #decimalPoint {
     color: #fff;
     background-color: #9d9a9a;
