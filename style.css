@@ -61,16 +61,7 @@ button:active {
     color: #fff;
 }
 
-#zero,
-#one,
-#two,
-#three,
-#four,
-#five,
-#six,
-#seven,
-#eight,
-#nine,
+.numbers,
 #decimalPoint {
     color: #fff;
     background-color: #9d9a9a;

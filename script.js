@@ -1,15 +1,6 @@
 "use strict"
 
-const zero = document.querySelector("#zero");
-const one = document.querySelector("#one");
-const two = document.querySelector("#two");
-const three = document.querySelector("#three");
-const four = document.querySelector("#four");
-const five = document.querySelector("#five");
-const six = document.querySelector("#six");
-const seven = document.querySelector("#seven");
-const eight = document.querySelector("#eight");
-const nine = document.querySelector("#nine");
+const numbersButton = document.querySelectorAll(".numbers");
 
 const clearButton = document.querySelector("#clear");
 
@@ -73,24 +64,25 @@ equalsButton.addEventListener(("click"), () => {
 })
 
 
-function getNumber(num) {
-    num.addEventListener(("click"), () => {
-        if (initialValue.textContent === "0") {
-            initialValue.textContent = num.textContent;
-        } else
-            initialValue.textContent += num.textContent;
+numbersButton.forEach((button) => {
+    button.addEventListener(("click"), () => {
+        if (!operator) {
+            if (!fisrtNum) {
+                fisrtNum = button.textContent;
+            } else {
+                fisrtNum += button.textContent;
+            }
+            initialValue.textContent = fisrtNum;
+        } else {
+            if (!nextNum) {
+                nextNum = button.textContent;
+            } else {
+                nextNum += button.textContent;
+            }
+            initialValue.textContent = nextNum;
+        }
     })
-}
-getNumber(zero);
-getNumber(one);
-getNumber(two);
-getNumber(three);
-getNumber(four);
-getNumber(five);
-getNumber(six);
-getNumber(seven);
-getNumber(eight);
-getNumber(nine);
+})
 
 
 clearButton.addEventListener(("click"), ()=> {
