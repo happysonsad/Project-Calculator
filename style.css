@@ -5,27 +5,27 @@
 }
 
 body {
-    border: 2px solid black;
-    border-radius: 10px;
-    max-width: 25vh;
+    background-image: url("meme-cat.jpg");
+    max-width: 45vh;
     max-height: 50vh;
-    margin: 15% auto;
+    margin: 20% auto;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 #calculator-container {
-    background-color: #000000;
     padding: 1vh;
+    border-radius: 55px;
+    border: dashed 10px #f4f4f4;
 }
 
 #initialValue{
     padding: 2vh;
-    font-size: 3vh;
+    font-size: 5vh;
     text-shadow: -2px -2px 2px #eda90b;
 }
 
 button {
-    padding: 2vh;
+    padding: 4vh;
     border-radius: 10px;
     font-weight: bold;
     border-style: none;
@@ -55,18 +55,21 @@ button:active {
 #clear {
     background-color: #d9d6d6;
     width: 20vh;
+    font-size: 3vh;
 }
 
 .operators,
 #equals {
     background-color: #f6bc51;
     color: #fff;
+    font-size: 3vh;
 }
 
 .numbers,
 #decimalPoint {
     color: #fff;
     background-color: #9d9a9a;
+    font-size: 3vh;
 }
 
 
