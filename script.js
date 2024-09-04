@@ -68,5 +68,12 @@ getNumber(seven);
 getNumber(eight);
 getNumber(nine);
 
+const clear = document.querySelector("#clear")
+function clearNumber(button) {
+    button.addEventListener(("click"), () => {
+        display.textContent = 0;
+        displayValue = 0;
+    })
+}
 
-console.log(displayValue)
+clearNumber(clear);
