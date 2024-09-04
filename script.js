@@ -20,6 +20,11 @@ const subtractButton = document.querySelector("#subtract");
 const multiplyButton = document.querySelector("#multiply");
 const divideButton = document.querySelector("#divide");
 
+const decimalPointButton = document.querySelector("#decimalPoint");
+
+const equalsButton = document.querySelector("#equals");
+
+
 let fisrtNum = "";
 let operator = "";
 let nextNum = "";
