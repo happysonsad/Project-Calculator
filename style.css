@@ -55,10 +55,7 @@ button:active {
     width: 20vh;
 }
 
-#multiply,
-#subtract,
-#add,
-#divide,
+.operators,
 #equals {
     background-color: #f6bc51;
     color: #fff;
