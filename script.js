@@ -13,7 +13,7 @@ const decimalPointButton = document.querySelector("#decimalPoint");
 const equalsButton = document.querySelector("#equals");
 
 
-let fisrtNum;
+let firstNum;
 let operator;
 let nextNum;
 
@@ -30,49 +30,15 @@ function divide (a, b){
     return a / b;
 }
 
-function operate(num1, num2, op){
-    if (op == "+") return add (num1, num2);
-    if (op == "-") return subtract (num1, num2);    
-    if (op == "*") return multiply (num1, num2);
-    if (op == "/") {
-        if (num2 == 0) {return "Error"}
-        return divide(num1,num2);
-    }
-}
-
-operators.forEach(button => {
-    button.addEventListener(("click"), () => {
-        if ((!operator) || (!nextNum)) {
-            operator = button.textContent;
-            initialValue.textContent = operator;
-        } else {
-            let result = operate(Number(fisrtNum), Number(nextNum), operator);
-            nextNum = null;
-            operator = button.textContent;
-            initialValue.textContent = button.textContent;
-            fisrtNum = result.toFixed(2);
-        }
-    })
-})
-
-equalsButton.addEventListener(("click"), () => {
-    let result = operate(Number(fisrtNum), Number(nextNum), operator);
-    initialValue.textContent = typeof result == "string" ? result : result.toFixed(2);
-    nextNum = null;
-    operator = null;
-    fisrtNum = result.toFixed(2);
-})
-
-
 numbersButton.forEach((button) => {
     button.addEventListener(("click"), () => {
         if (!operator) {
-            if (!fisrtNum) {
-                fisrtNum = button.textContent;
+            if (!firstNum) {
+                firstNum = button.textContent;
             } else {
-                fisrtNum += button.textContent;
+            firstNum += button.textContent;
             }
-            initialValue.textContent = fisrtNum;
+            initialValue.textContent = firstNum;
         } else {
             if (!nextNum) {
                 nextNum = button.textContent;
@@ -85,6 +51,40 @@ numbersButton.forEach((button) => {
 })
 
 
+function operate(num1, num2, op){
+    if (op == "+") return add (num1, num2);
+    if (op == "–") return subtract (num1, num2);    
+    if (op == "×") return multiply (num1, num2);
+    if (op == "÷") {
+        if (num2 == 0) {return "Error"}
+        return divide(num1,num2);
+    }
+}
+
+operators.forEach(button => {
+    button.addEventListener(("click"), () => {
+        if ((!operator) || (!nextNum)) {
+            operator = button.textContent;
+            initialValue.textContent = operator;
+        } else {
+            let result = operate(Number(firstNum), Number(nextNum), operator);
+            nextNum = null;
+            operator = button.textContent;
+            initialValue.textContent = button.textContent;
+            firstNum = result.toFixed(2);
+        }
+    })
+})
+
+equalsButton.addEventListener("click", () => {
+    let result = operate(Number(firstNum), Number(nextNum), operator);
+    initialValue.textContent = typeof result == "string" ? result : result.toFixed(2);
+    nextNum = null;
+    operator = null;
+    firstNum = result.toFixed(2);
+})
+
+
 decimalPointButton.addEventListener(("click"), ()=> {
     if (initialValue.textContent.includes(".")) {
         
@@ -94,7 +94,7 @@ decimalPointButton.addEventListener(("click"), ()=> {
 })
 
 clearButton.addEventListener(("click"), ()=> {
-    fisrtNum = null;
+    firstNum = null;
     operator = null;
     nextNum = null;
     initialValue.textContent = null;
