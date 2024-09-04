@@ -57,10 +57,10 @@ operators.forEach(button => {
 
 equalsButton.addEventListener(("click"), () => {
     let result = operate(Number(fisrtNum), Number(nextNum), operator);
-    initialValue.textContent = typeof result == "string" ? result : result.toFixed(2);
+    initialValue.textContent = result;
     nextNum = null;
     operator = null;
-    fisrtNum = result.toFixed(2);
+    fisrtNum = result;
 })
 
 
