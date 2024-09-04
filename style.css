@@ -16,7 +16,7 @@ body {
     padding: 1vh;
 }
 
-#display{
+#initialValue{
     padding: 1vh;
     font-size: 3vh;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;

@@ -13,7 +13,7 @@ const nine = document.querySelector("#nine");
 
 const clearButton = document.querySelector("#clear");
 
-const display = document.querySelector("#display");
+const initialValue = document.querySelector("#initialValue");
 
 const addButton = document.querySelector("#add");
 const subtractButton = document.querySelector("#subtract");
@@ -54,17 +54,17 @@ function operate(num1, num2, operator) {
     };
 
 let displayValue = 0;
-display.textContent = displayValue;
+initialValue.textContent = displayValue;
 
 
 function getNumber(num) {
     num.addEventListener(("click"), () => {
-        if (display.textContent === "0") {
+        if (initialValue.textContent === "0") {
             displayValue = num.textContent;
-            return display.textContent = num.textContent;
+            return initialValue.textContent = num.textContent;
         } else
             displayValue += num.textContent;
-            return display.textContent += num.textContent;
+            return initialValue.textContent += num.textContent;
     })
 }
 getNumber(zero);
@@ -80,7 +80,7 @@ getNumber(nine);
 
 function clearNumber(button) {
     button.addEventListener(("click"), () => {
-        display.textContent = 0;
+        initialValue.textContent = 0;
         displayValue = 0;
     })
 }
