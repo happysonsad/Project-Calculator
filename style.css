@@ -52,6 +52,7 @@ button:active {
 
 #clear {
     background-color: #d9d6d6;
+    width: 20vh;
 }
 
 #multiply,
