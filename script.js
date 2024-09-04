@@ -45,18 +45,9 @@ function divide(a, b) {
     return a / b;
 }
 
-function operate(num1, num2, operator) {
-    switch (operator) {
-        case "+":
-          return add(num1, num2);
-        case "-":
-          return subtract(num1, num2);
-        case "*":
-          return multiply(num1, num2);
-        case "/":
-          return divide(num1, num2);
-      }
-    };
+function operate () {
+
+}
 
 
 function getNumber(num) {
@@ -78,12 +69,11 @@ getNumber(seven);
 getNumber(eight);
 getNumber(nine);
 
-function clearNumber(button) {
-    button.addEventListener(("click"), () => {
-        initialValue.textContent = 0;
-    })
-}
-clearNumber(clearButton);
+
+clearButton.addEventListener(("click"), ()=> {
+    initialValue.textContent = 0;
+})
+
 
 decimalPointButton.addEventListener(("click"), ()=> {
     if (initialValue.textContent.includes(".")) {
