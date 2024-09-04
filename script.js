@@ -98,5 +98,5 @@ clearButton.addEventListener(("click"), ()=> {
     operator = null;
     nextNum = null;
     initialValue.textContent = null;
-
+    initialValue.textContent = 0;
 })
